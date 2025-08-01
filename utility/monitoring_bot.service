@@ -1,0 +1,15 @@
+[Unit]
+Description=Monitoring bot server
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/root/monitoring_bot_export
+Type=simple
+Restart=always
+ExecStart=/usr/bin/node ./backend/cmd/server.js
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
