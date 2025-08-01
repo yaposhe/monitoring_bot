@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/index.css">
+  <title>Мониторинг бота</title>
+</head>
+
+<body>
+  <header>
+    <img class="header-logo" src="/img/logo.png" width="50" height="50">
+    <div class="header-controls">
+      <span id="userEmailDisplay"></span>
+      <button id="logoutBtn">Выход</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="notification"></div>
+
+    <!-- Область "Управление ботом" -->
+    <div class="button-group">
+      <h2>Управление</h2>
+      <div id="control-bot-buttons">
+        <button id="startBot">Запуск</button>
+        <button id="stopBot">Остановка</button>
+        <button id="restartBot">Перезапуск</button>
+      </div>
+    </div>
+
+    <!-- Область "Бот" -->
+    <div class="button-group">
+      <h2>Бот</h2>
+      <div id="bot-buttons">
+        <button id="openStatBtn">Статистика</button>
+        <button id="openJournalBtn">Журнал</button>
+        <button id="openConfigBtn">Конфигурация</button>
+        <button id="openApiBtn">Api ключи</button>
+      </div>
+    </div>
+  </main>
+
+  <dialog id="dlgApi">
+    <div id="apiDialogMainDiv">
+      <select id="exchangeApiSelect">
+        <option value="bybit">Bybit</option>
+        <option value="binance">Binance</option>
+      </select>
+
+      <div id="apiFields">
+        <label for="apiKey" class="apiKeyLabel">Api ключ</label>
+        <input type="text" class="apiKeyInput" placeholder="Введите API ключ" id="apiKey" />
+
+        <label for="apiSecret" class="apiKeyLabel">Секретный ключ</label>
+        <input type="text" class="apiKeyInput" placeholder="Введите секретный ключ" id="apiSecretKey" />
+      </div>
+
+      <div id="api-control-buttons">
+        <button class="send-btn" id="sendApiKeysBtn">Отправить</button>
+        <button class="check-btn" id="checkApiKeysBtn">Проверить ключи</button>
+        <button class="close-btn" id="closeApiBtn">Закрыть</button>
+      </div>
+    </div>
+
+  </dialog>
+
+  <dialog id="dlgConfig">
+    <div class="config">
+      <h2>Конфигурация бота</h2>
+      <div class="main-area-config">
+        <div>
+          <div>
+            <h3>Основные параметры</h3>
+            <div id="mainConfigContainer" class="main-config-container"></div>
+          </div>
+          <div>
+            <h3>Bybit</h3>
+            <div class="pairs-container">
+              <select id="availablePairs" class="modern-select"></select>
+              <button id="addPairBtn" class="config-btn">Добавить специфичный конфиг для монеты</button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>Параметры для монеты</h3>
+          <div class="pair-config-full-container">
+            <select id="existingPairs" class="modern-select"></select>
+            <div id="pairConfigContainer" class="pair-config-container"></div>
+          </div>
+        </div>
+      </div>
+      <div class="config-control-buttons-container">
+        <div class="left-config-control-buttons">
+          <button id="saveConfigBtn" class="config-btn primary">Сохранить конфигурацию</button>
+          <button id="updateConfigBtn">Обновить окно</button>
+        </div>
+        <div class="right-config-control-buttons">
+          <button id="closeConfigBtn">Закрыть окно</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="dlgStats">
+    <div class="stats-dialog">
+      <div class="stats-header">
+        <div>
+          <label class="main-config-label">Статистика для запуска:</label>
+          <select id="existingLaunches" class="modern-select"></select>
+        </div>
+      </div>
+      <div class="stats-table-container">
+        <table id="statsTable">
+          <thead>
+            <tr>
+              <th>Пара</th>
+              <th>Цикл</th>
+              <th>Время обновления</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Данные будут добавляться через JS -->
+          </tbody>
+        </table>
+      </div>
+      <div class="stats-control">
+        <button id="refreshStatsBtn">Обновить</button>
+        <button id="closeStatBtn">Закрыть</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="journalDialog">
+    <div id="journal-dlg">
+      <div class="container-filter-journal">
+        <select id="availableJournals" class="journal-dialog-select"></select>
+        <select id="pairFilter" class="journal-dialog-select">
+          <option value="all">Все доступные журналы</option>
+        </select>
+      </div>
+      <pre id="journalPreview"></pre>
+      <div class="buttons-container-control-journal">
+        <button id="refreshJournalBtn">Обновить</button>
+        <button id="closeJournalBtn">Закрыть</button>
+      </div>
+    </div>
+  </dialog>
+
+  <noscript>"Включите JavaScript"</noscript>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>

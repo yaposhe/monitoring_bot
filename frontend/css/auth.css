@@ -1,0 +1,112 @@
+/* Стили для формы */
+.auth-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: left; /* Выравниваем текст по левому краю */
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center; /* Заголовок по центру */
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-align: left; /* Надписи по левому краю */
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%; /* Ширина поля ввода на 100% */
+  box-sizing: border-box; /* Учитываем padding в ширине */
+}
+
+button {
+  font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    color: #fff;
+    background-color: #0e52b9;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 16px 36px rgb(52 213 68 / 22%);
+    padding: 15px;
+  width: 100%; /* Кнопка на всю ширину */
+}
+
+p {
+  margin-top: 10px;
+  text-align: center; /* Текст по центру */
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center; /* Выравнивание по горизонтали */
+  align-items: center; /* Выравнивание по вертикали */
+  height: 100vh; /* Высота на весь экран */
+  margin: 0; /* Убираем отступы по умолчанию */
+}
+
+.auth-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: left; /* Надписи по левому краю */
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    width: 90%; /* Ширина контейнера на маленьких экранах */
+  }
+}
+
+.auth-container {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loader {
+  display: inline-block;
+  margin-right: 8px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

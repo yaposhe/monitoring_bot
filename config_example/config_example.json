@@ -1,0 +1,10 @@
+{
+    "port" : "3000", // порт сервера
+    "host" : "0.0.0.0", // адрес
+    "log_path" : "./log/webserver.log", // относительный путь к файлу с логами
+    "bot_db" : "__test__", // абсолютный путь к базе бота. Можно работать и без нее. Тогда нужно прописать __test__ в значение
+    "bot_config" : "./config.json", // абсолютный путь к конфигу бота
+    "webserver_db" : "./db/webserver.db", // относительный путь в базе вебсервера
+    "daemon_bot" : "headge_bot", // имя службы бота
+    "journal_dir" : "F:\\Python_projects\\bybit_bot\\Bots\\HeadgeBots\\HeadgeBot\\Log" // директория с логами бота
+}

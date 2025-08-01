@@ -1,0 +1,655 @@
+/* Общие стили для всего документа */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background-color: #f5f5f7;
+    color: #1d1d1f;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Стили для шапки */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    height: 50px;
+    width: auto;
+    /* Сохраняем пропорции */
+    transition: transform 0.3s ease;
+}
+
+.header-logo:hover {
+    transform: scale(1.05);
+}
+
+.header-controls {
+    display: flex;
+    gap: 15px;
+}
+
+/* Стили для основной части */
+/* Основной контейнер main — делаем его flex-контейнером */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Центрируем по горизонтали */
+    padding: 20px;
+}
+
+/* Области "Управление" и "Бот" */
+.button-group {
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Заголовки */
+.button-group h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Контейнер с кнопками внутри групп — в строку */
+#control-bot-buttons,
+#bot-buttons {
+    display: flex;
+    /* по умолчанию flex-direction: row */
+    justify-content: center;
+    /* центрируем кнопки внутри блока */
+    gap: 10px;
+    /* расстояние между кнопками */
+}
+
+.control-panel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Общие стили для кнопок */
+button {
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стили для конкретных кнопок */
+#startBot {
+    background-color: #34c759;
+    color: white;
+}
+
+#stopBot {
+    background-color: #ff3b30;
+    color: white;
+}
+
+#restartBot {
+    background-color: #c629db;
+    color: white;
+}
+
+#openStatBtn {
+    background-color: #007aff;
+    color: white;
+}
+
+#openJournalBtn {
+    background-color: #00b7ff;
+    color: white;
+}
+
+#openConfigBtn {
+    background-color: #5856d6;
+    color: white;
+}
+
+#logoutBtn {
+    background-color: transparent;
+    color: #ff3b30;
+    border: 1px solid #ff3b30;
+}
+
+#openApiBtn {
+    background-color: #00ff6a;
+    color: white;
+}
+
+/* Элемент для отображения электронного адреса */
+#userEmailDisplay {
+    font-family: Arial, sans-serif;
+    /* Базовый шрифт */
+    font-weight: normal;
+    /* Обычная толщина шрифта */
+    font-size: 16px;
+    /* Размер шрифта */
+    line-height: 1.5;
+    /* Высота строки */
+    color: #292929;
+    /* Цвет текста */
+    letter-spacing: 0.5px;
+    /* Промежуток между символами */
+    white-space: nowrap;
+    /* Запрет разрыва строки */
+    overflow: hidden;
+    /* Обрезать длинные тексты */
+    text-overflow: ellipsis;
+    /* Многоточие при обрезании */
+    max-width: 200px;
+    /* Максимальная ширина */
+    vertical-align: middle;
+    /* Горизонтальное выравнивание */
+    margin-right: 10px;
+    /* Отступ справа */
+    padding: 10px;
+    /* Внутренний отступ */
+    background-color: #fafafa;
+    /* Светлый фон */
+    border: 1px solid #ddd;
+    /* Тонкая светлая рамка */
+    border-radius: 8px;
+    /* Скругление углов рамки */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    /* Переход цветов */
+}
+
+/* Эффекты при наведении */
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#dlgConfig {
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.config-control-buttons-container {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+    /* Распределяет блоки по краям */
+    align-items: center;
+    /* Вертикальное выравнивание по центру, при необходимости */
+}
+
+/* Можно дополнительно стилизовать левый и правый блок, если нужно */
+.left-config-control-buttons {
+    display: flex;
+    gap: 10px;
+    /* Расстояние между кнопками слева */
+}
+
+.right-config-control-buttons {
+    /* Можно оставить пустым или добавить стили при необходимости */
+}
+
+.modern-select {
+    width: max-content;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.modern-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+.config {
+    display: flex;
+    flex-direction: column;
+    gap: 5x;
+    padding: 5px;
+    background-color: #f5f5f5;
+}
+
+/* Стиль для каждого поля */
+.main-config-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Стили для label */
+.main-config-label {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+/* Стиль для текстового input (значение) */
+.config-input-value {
+  padding: 6px; /* внутренние отступы */
+  border: 1.5px solid #ccc; /* рамка */
+  border-radius: 4px; /* скругление углов */
+  font-size: 14px; /* размер шрифта */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 15%;
+}
+
+.config-input-value:focus {
+  border-color: #66afe9; /* цвет рамки при фокусе */
+  outline: none;
+  box-shadow: 0 0 5px rgba(102,175,233,0.6); /* тень при фокусе */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Стиль для чекбокса */
+.config-input-checkbox {
+  transform: scale(1.5); /* увеличиваем размер чекбокса */
+  transition: transform 0.2s ease;
+}
+
+/* Можно добавить дополнительные стили для чекбокса по желанию */
+
+.main-config-label:hover {
+  color: #007bff; /* цвет при наведении */
+}
+
+.main-area-config {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.main-config-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pair-config-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+
+.pairs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pair-config-full-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Для чекбоксов особый стиль */
+.config-field input[type="checkbox"] {
+    width: auto;
+    align-self: flex-start;
+    margin-top: 5px;
+}
+
+/* Плавное появление */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Уведомление */
+#notification {
+    position: fixed;
+    top: 20px;
+    /* Отступ сверху */
+    left: 50%;
+    /* Центрируем по горизонтали */
+    transform: translateX(-50%);
+    /* Компенсируем смещение на половину ширины блока */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+#notification.hidden {
+    opacity: 0;
+    pointer-events: none;
+    /* Сделаем уведомление непрозрачным */
+}
+
+/* Кастомная подсказка */
+.label-with-custom-tooltip {
+    font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  transition: color 0.3s ease;
+    position: relative;
+    display: inline-block;
+    cursor: default;
+}
+
+.label-with-custom-tooltip .tooltip-text {
+    visibility: hidden;
+    width: max-content;
+    max-width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-20%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.4;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.label-with-custom-tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+.label-with-custom-tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 0.9;
+}
+
+/* Диалог с журналом */
+
+#journalDialog {
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#journal-dlg {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#journalPreview {
+    max-height: 600px;
+    width: 100%;
+    overflow-y: auto;
+    padding: 5px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    font-family: 'Fira Code', 'Source Code Pro', monospace, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.buttons-container-control-journal {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.container-filter-journal {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 3px;
+    gap: 10px;
+}
+
+.journal-dialog-select {
+    width: auto;
+    max-width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.journal-dialog-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+.journal-log-info {
+    color: #1259cc;
+}
+
+.journal-log-warning {
+    color: #b18e05;
+}
+
+.journal-log-error {
+    color: #d43333;
+}
+
+/* диалог с Api ключами*/
+#dlgApi {
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    min-width: 350px;
+}
+
+#apiDialogMainDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#exchangeApiSelect {
+    width: auto;
+    /* или задайте конкретную ширину, например, 200px */
+    max-width: 100%;
+    /* чтобы не выходить за границы контейнера */
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    /* чтобы margin auto работал */
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#exchangeApiSelect:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+#api-control-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Общие стили для контейнера */
+#apiFields {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* Стили для label */
+.apiKeyLabel {
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+/* Стили для input */
+.apiKeyInput {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.apiKeyInput:focus {
+    outline: none;
+    border-color: #007bff;
+    /* Цвет при фокусе */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Дополнительные стили для более современного вида */
+#apiFields input[type="text"] {
+    background-color: #fff;
+}
+
+/* Статистика */
+/* Общие стили для диалога */
+#dlgStats {
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.stats-control {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Стиль для контейнера внутри диалога */
+.stats-dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Заголовок и селект */
+.stats-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-config-label {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Современный стиль для select */
+.modern-select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.modern-select:hover,
+.modern-select:focus {
+  border-color: #007bff;
+  box-shadow: inset 0 0 5px rgba(0,123,255,0.5);
+}
+
+/* Контейнер таблицы с прокруткой при необходимости */
+.stats-table-container {
+  overflow-x: auto; /* горизонтальная прокрутка при ширине */
+}
+
+/* Таблица с современным стилем */
+#statsTable {
+  width: 100%;
+  border-collapse: collapse; /* убираем двойные границы */
+}
+
+#statsTable thead {
+  background-color: #f8f9fa; /* светлый фон для шапки */
+}
+
+#statsTable th {
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+}
+
+#statsTable tbody tr:nth-child(even) {
+  background-color: #f1f1f1; /* чередование фона для строк */
+}
+
+#statsTable tbody tr:hover {
+  background-color: #e9ecef; /* эффект при наведении */
+}
+
+/* Стиль ячеек таблицы */
+#statsTable td {
+  padding: 12px;
+}
